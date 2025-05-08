@@ -7,7 +7,7 @@ const int MAX_COURSES = 20;
 const int MAX_DEPARTMENTS = 5;
 const int MAX_PROFESSORS = 10;
 
-// ------------------- Exception Classes -------------------
+//  Exception Classes 
 class UniversitySystemException {
 protected:
     string message;
@@ -26,7 +26,7 @@ public:
     GradeException(string msg) : UniversitySystemException(msg) {}
 };
 
-// ------------------- Base Class -------------------
+//  Base Class 
 class Person {
 protected:
     string name, id;
@@ -50,7 +50,7 @@ public:
     string getId() { return id; }
 };
 
-// ------------------- Student -------------------
+//  Student 
 class Student : public Person {
 protected:
     float cgpa;
@@ -108,7 +108,7 @@ public:
     }
 };
 
-// ------------------- Professor -------------------
+//  Professor 
 class Professor : public Person {
 protected:
     string department;
@@ -151,7 +151,7 @@ public:
     float calculatePayment() { return 60000.0f; }
 };
 
-// ------------------- Course -------------------
+// Course
 class Course {
     string code, title;
     int credits;
@@ -171,7 +171,7 @@ public:
     string getCode() { return code; }
 };
 
-// ------------------- GradeBook -------------------
+//  GradeBook
 class GradeBook {
     string studentIds[MAX_STUDENTS];
     float grades[MAX_STUDENTS];
@@ -199,7 +199,7 @@ public:
     }
 };
 
-// ------------------- EnrollmentManager -------------------
+// EnrollmentManager 
 class EnrollmentManager {
     string enrollments[MAX_COURSES][MAX_STUDENTS];
     int studentCounts[MAX_COURSES];
@@ -219,7 +219,7 @@ public:
     }
 };
 
-// ------------------- UniversitySystem -------------------
+// UniversitySystem
 class UniversitySystem {
 public:
     void run() {
@@ -255,7 +255,7 @@ public:
     }
 };
 
-// ------------------- Main -------------------
+// Main
 int main() {
     UniversitySystem system;
     system.run();
